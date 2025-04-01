@@ -12,6 +12,9 @@ app.use(bodyParser.json());
 
 app.post('/chat', async (req, res) => {
   const userMessage = req.body.message;
+  
+  console.log('Meddelande mottaget:', userMessage);
+  console.log('Anropar OpenAI...');
 
   if (!userMessage) {
     return res.status(400).json({ error: 'Meddelande krävs' });
